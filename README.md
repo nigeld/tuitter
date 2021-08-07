@@ -7,7 +7,9 @@ Things you may want to cover:
 
 * Ruby version
 
-* System dependencies
+## System dependencies
+
+Tuitter requires PostgreSQL to run.
 
 * Configuration
 
@@ -19,6 +21,31 @@ Things you may want to cover:
 
 * Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+## Deployment using Heroku
+
+Download and install the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-command-line).
+
+If you haven't already, log in to your Heroku account and follow the prompts to create a new SSH public key.
+
+```sh
+$ heroku login
+```
+
+Then let's create a new Heroku app
+
+```sh
+$ heroku create APP_NAME
+```
+
+Then add a database 
+```sh
+$ heroku addons:create heroku-postgresql:hobby-dev
+```
+
+Then push code to server
+```sh
+$ git push heroku master
+```
+
 
 * ...
