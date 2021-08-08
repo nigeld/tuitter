@@ -1,0 +1,12 @@
+<%= content_tag :tr, id: dom_id(user) do %>
+    <td>
+        <%= "#{user.name} (#{user.username})" %>
+    </td>
+    <td>
+        <% if current_user.can_follow?(user)  %>
+            <%= link_to 'follow', [:new, :following, id: user], remote: true  %>
+        <% elsif current_user.can_unfollow?(user)  %>
+            <%= link_to 'unfollow', [:following, id: user], remote: true, method: :delete  %>
+        <% end %>
+    </td>
+<% end %>

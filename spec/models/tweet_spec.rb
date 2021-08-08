@@ -22,8 +22,6 @@ RSpec.describe Tweet, type: :model do
     it 'ensure save successfully' do 
       expect(tweet.save).to eq(true)
     end
-
-    
   end
 
 end
