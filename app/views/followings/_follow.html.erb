@@ -3,7 +3,7 @@
         <%= "#{user.name} " %>
         <%= link_to "(#{user.username})", user_profile_path(user.username) %>
         <% if current_user.can_follow?(user)  %>
-            <%= link_to 'follow', [:new, :following, id: user.username], remote: true  %>
+            <%= link_to 'follow', [:new, :following, id: user.username]  %>
         <% elsif current_user.can_unfollow?(user)  %>
             <%= link_to 'unfollow', [:following, id: user.username], remote: true, method: :delete  %>
         <% end %>

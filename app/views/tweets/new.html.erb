@@ -1,7 +1,10 @@
+
+<h2 class="margin-bottom">What are you thinking?<h2>
+
 <%= form_with(model: @tweet) do |form| %>
     <% if @tweet.errors.any? %>
         <div id="error_explanation">
-        <h2><%= pluralize(@tweet.errors.count, "error") %> prohibited this favory from being saved:</h2>
+        <p><%= pluralize(@tweet.errors.count, "error") %> prohibited this tweet from being saved:</p>
 
         <ul>
             <% @tweet.errors.each do |error| %>
@@ -12,7 +15,6 @@
     <% end %>
 
   <div class="mb-3">
-    <%= form.label :text, class: 'form-label' %>
     <%= form.text_area :text, class: 'form-control' %>
   </div>
   <%= form.submit :class => 'btn btn-primary' %>

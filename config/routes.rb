@@ -8,7 +8,11 @@ Rails.application.routes.draw do
 
   root 'dashboard#index'
 
+  get '/follow', to: 'followings#follow', as: 'follow_username_form'
+  post '/follow', to: 'followings#new', as: 'follow_username'
+
   get '/:username', to: 'users#show', as: 'user_profile'
   get '/:username/followers', to: 'users#followers', as: 'user_followers'
   get '/:username/followed', to: 'users#followed', as: 'user_followees'
+  
 end

@@ -1,6 +1,7 @@
 <div class="row">
     <div class="col-4">
         <%= render partial: 'users/profile' %>
+        <%= link_to 'Tweet', new_tweet_path, class: 'btn btn-primary btn-lg margin-top' %>
     </div>
     <div class="col-8">
         <%= render partial: 'tweets/show', collection: @tweets, as: :tweet %>

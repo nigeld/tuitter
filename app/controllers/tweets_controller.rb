@@ -12,7 +12,7 @@ class TweetsController < ApplicationController
 
         respond_to do |format|
             if @tweet.save
-              format.html { redirect_to tweets_url, notice: "Tweet was posted!" }
+              format.html { redirect_to root_url, notice: "Tweet was posted!" }
             else
               format.html { render :new, status: :unprocessable_entity }
             end

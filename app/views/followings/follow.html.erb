@@ -1,0 +1,11 @@
+<h2 class="margin-bottom">Do you want to follow someone?<h2>
+
+<%= form_with url: follow_username_url do |form| %>
+
+  <div class="mb-3">
+    <%= form.label :id, 'Enter username', class: 'form-label' %>
+    <%= form.text_field :id, class: 'form-control' %>
+  </div>
+  <%= form.submit 'Follow', :class => 'btn btn-primary' %>
+  
+<% end %>

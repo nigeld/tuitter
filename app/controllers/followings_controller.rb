@@ -2,8 +2,7 @@ class FollowingsController < ApplicationController
     before_action :set_user
     def new
         current_user.follow_user(@user)
-
-        current_user.reload
+        redirect_to user_profile_url({username: @user.username}) and return
     end
 
     def destroy

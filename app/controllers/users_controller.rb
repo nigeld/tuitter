@@ -5,11 +5,11 @@ class UsersController < ApplicationController
   end
 
   def followers
-    @users = @user.followers.page(params[:page])
+    @users = @user.followers.order('name ASC').page(params[:page])
   end
 
   def followed
-    @users = @user.followees.page(params[:page])
+    @users = @user.followees.order('name ASC').page(params[:page])
   end
 
   def set_user
