@@ -1,0 +1,6 @@
+<div class="card margin-bottom" style="">
+  <div class="card-body">
+    <h5 class="card-title"><%= "#{tweet.user.name}, @#{tweet.user.username} - #{tweet.created_at.to_formatted_s(:long)  } " %></h5>
+    <p class="card-text"><%= tweet.text %></p>
+  </div>
+</div>

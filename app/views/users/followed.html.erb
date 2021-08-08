@@ -1,2 +1,14 @@
-<h1>Users#followed</h1>
-<p>Find me in app/views/users/followed.html.erb</p>
+<h1> Users followed by <%= "@#{@user.username}" %> </h1>
+
+<table class="table table-condensed">
+    <thead>
+        <tr> 
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <%= render partial: 'followings/follow', collection: @users, as: :user %>
+    </tbody>
+</table>
+
+<%= paginate @users %>

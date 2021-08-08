@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   root 'dashboard#index'
 
-  get '/:username', to: 'users#show'
-  get '/:username/followers', to: 'users#followers'
-  get '/:username/followed', to: 'users#followed'
+  get '/:username', to: 'users#show', as: 'user_profile'
+  get '/:username/followers', to: 'users#followers', as: 'user_followers'
+  get '/:username/followed', to: 'users#followed', as: 'user_followees'
 end

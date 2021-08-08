@@ -19,6 +19,9 @@
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <li>
+                    <%= link_to 'Profile', user_profile_path(current_user.username), class: 'dropdown-item' %>
+                </li>
+                <li>
                     <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: 'dropdown-item' %>
                 </li>
             </ul>

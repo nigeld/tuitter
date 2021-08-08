@@ -1,2 +1,22 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<div class="row">
+    <div class="col-4">
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title"><%= @user.name%></h5>
+                <p class="card-text"><%= "@#{@user.username}" %></p>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><%= link_to "Followers (#{@user.followers.count})", user_followers_path(@user.username) %></li>
+                <li class="list-group-item"><%= link_to "Followed (#{@user.followees.count})", user_followees_path(@user.username) %></li>
+            </ul>
+        </div>        
+    </div>
+    <div class="col-8">
+        <%= render partial: 'tweets/show', collection: @tweets, as: :tweet %>
+
+        <%= paginate @tweets %>
+    </div>
+</div>
+
+
+
