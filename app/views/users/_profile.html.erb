@@ -1,0 +1,20 @@
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title"><%= @user.name%></h5>
+        <p class="card-text"><%= "@#{@user.username}" %>
+            <% if current_user.can_follow?(@user)  %>
+                <%= link_to 'follow', [:new, :following, id: @user.username], remote: true  %>
+            <% elsif current_user.can_unfollow?(@user)  %>
+                <%= link_to 'unfollow', [:following, id: @user.username], remote: true, method: :delete  %>
+            <% end %>
+        </p>
+    </div>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item"><%= link_to "Followers (#{@user.followers.count})", user_followers_path(@user.username) %></li>
+        <li class="list-group-item"><%= link_to "Followed (#{@user.followees.count})", user_followees_path(@user.username) %></li>
+        
+        
+
+        
+    </ul>
+</div>

@@ -1,49 +1,12 @@
 <div class="row">
-    <div class="col-8">
-        <h2>
-            <%= current_user.name%>
-            <span>
-                <%= "@#{current_user.username}"%>
-            </span>
-        </h2>
-        
-    </div>
     <div class="col-4">
-      <%= link_to 'Tweet', new_tweet_path, class: 'btn btn-primary btn-lg' %>
+        <%= render partial: 'users/profile' %>
     </div>
-</div>
-<div class="row">
     <div class="col-8">
-        <table class="table table-bordered">
-            <thead>
-                <td colspan="2" class="table-active">Followers</td>
-                <td>Followed</td>
-                </tr>
-            </thead>
-            <tbody>
-                <td colspan="2" class="table-active"> <%= current_user.followers.count %> </td>
-                <td> <%= current_user.followees.count %> </td>
-                </tr>
-            </tbody>
-        </table>
-        
-    </div>
-    <div class="col-4">
+        <%= render partial: 'tweets/show', collection: @tweets, as: :tweet %>
+
+        <%= paginate @tweets %>
     </div>
 </div>
 
 
-
-
-
-<table class="table table-condensed">
-    <thead>
-        <tr> 
-            <th>User</th>
-            <th>Actions</th>
-        </tr>
-    </thead>
-    <tbody>
-        <%= render partial: 'followings/follow', collection: @users, as: :user %>
-    </tbody>
-</table>
