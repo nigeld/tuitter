@@ -1,5 +1,40 @@
-<h1>Dashboard#index</h1>
-<p>Find me in app/views/dashboard/index.html.erb</p>
+<div class="row">
+    <div class="col-8">
+        <h2>
+            <%= current_user.name%>
+            <span>
+                <%= "@#{current_user.username}"%>
+            </span>
+        </h2>
+        
+    </div>
+    <div class="col-4">
+      <%= link_to 'Tweet', new_tweet_path, class: 'btn btn-primary btn-lg' %>
+    </div>
+</div>
+<div class="row">
+    <div class="col-8">
+        <table class="table table-bordered">
+            <thead>
+                <td colspan="2" class="table-active">Followers</td>
+                <td>Followed</td>
+                </tr>
+            </thead>
+            <tbody>
+                <td colspan="2" class="table-active"> <%= current_user.followers.count %> </td>
+                <td> <%= current_user.followees.count %> </td>
+                </tr>
+            </tbody>
+        </table>
+        
+    </div>
+    <div class="col-4">
+    </div>
+</div>
+
+
+
+
 
 <table class="table table-condensed">
     <thead>
