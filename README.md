@@ -1,25 +1,42 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Tuitter is a demo twitter clone app
 
-Things you may want to cover:
-
-* Ruby version
 
 ## System dependencies
 
-Tuitter requires PostgreSQL to run.
+* PostgreSQL
+* Ruby 2.7
+* Yarn
+* NodeJS
 
-* Configuration
+## Configuration
 
-* Database creation
+You need to setup database connection with an ENV variable 
 
-* Database initialization
+```sh
+DATABASE_URL="postgres://myuser:mypass@localhost/somedatabase"
+```
 
-* How to run the test suite
+## Database creation
 
-* Services (job queues, cache servers, search engines, etc.)
+To setup db run rake commands 
+
+```sh
+$ rails db:setup
+```
+
+```sh
+$ rails db:migrate
+```
+
+## How to run the test suite
+
+RSpec as test suite
+
+```sh
+$ rspec 
+```
 
 ## Deployment using Heroku
 
@@ -47,5 +64,3 @@ Then push code to server
 $ git push heroku master
 ```
 
-
-* ...
